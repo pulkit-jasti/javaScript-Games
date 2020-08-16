@@ -55,31 +55,41 @@ function myFunction() {
     for(let i=0;i<numberOfCards;i++){
         const max = 9;
         let card = document.createElement('div');
-        card.className = 'card';
-        document.getElementById('grid').appendChild(card)
-        let btn = document.createElement("img");
-        btn.src = cardArray[index].img;
-        document.getElementsByClassName('card')[i].appendChild(btn);
+        card.className = 'card-wrapper';
+        card.innerHTML = `<div class="card-front"><img src="${cardArray[index].img}"></div><div class="card-back">random</div>`;
+        //card.innerHTML = `<img src="${cardArray[index].img}">`;
+        document.getElementById('grid').appendChild(card);
+
         index++;
         if(index>9){index=0};
     }
 }
-//myFunction();
-
-let flp = document.getElementsByClassName('flip-card')[0];
-
-let cng = document.getElementsByClassName('line-1')[0];
+myFunction();
 
 
-flp.onclick=function(){
-    flp.classList.add('rot');
+
+const cardsList = document.querySelectorAll('.card-wrapper');
+
+function flipCard(){
+    console.log('clicked !!!!!!');
+    this.classList.toggle('flip');
 }
 
+cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
 
 
-cng.onclick=function(){
-    cng.style.backgroundColor='red'
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
