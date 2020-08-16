@@ -39,7 +39,7 @@
     overflow: hidden;
     position: absolute;
     height: 90%;
-    width: 60%;
+    width: 700px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -50,18 +50,28 @@
 
 
 #card-container #grid{
-    /*height: 500px;
-    width: 500px;*/
+    height: 100%;
     background-color: lightblue;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .card{
-    height: 100px;
-    width: 100px;
-    background-color: lightgreen;
+    height: 90px;
+    width:90px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 10px;
+}
+
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.2,1.2);
+    transition-duration: 200ms;
 }

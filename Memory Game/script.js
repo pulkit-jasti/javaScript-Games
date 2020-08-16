@@ -51,7 +51,7 @@ var obj2 = document.getElementsByClassName('grid')
 console.log(obj2);
 function myFunction() {
     let index = 0;
-    const numberOfCards = 25
+    const numberOfCards = 20;
     for(let i=0;i<numberOfCards;i++){
         const max = 9;
         let card = document.createElement('div');
