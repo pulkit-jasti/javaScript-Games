@@ -50,9 +50,18 @@
 
 
 #card-container #grid{
-    height: 500px;
-    width: 500px;
+    /*height: 500px;
+    width: 500px;*/
     background-color: lightblue;
     display: flex;
     flex-wrap: wrap;
+}
+
+.card{
+    height: 100px;
+    width: 100px;
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
