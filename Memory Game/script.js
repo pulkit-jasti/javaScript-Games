@@ -64,12 +64,23 @@ function myFunction() {
         if(index>9){index=0};
     }
 }
+//myFunction();
 
-myFunction();
+let flp = document.getElementsByClassName('flip-card')[0];
 
-let ran = getElementById('grid')
+let cng = document.getElementsByClassName('line-1')[0];
 
-//randomFunction();
+
+flp.onclick=function(){
+    flp.classList.add('rot');
+}
+
+
+
+cng.onclick=function(){
+    cng.style.backgroundColor='red'
+}
+
 
 
 
