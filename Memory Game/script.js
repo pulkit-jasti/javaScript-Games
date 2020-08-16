@@ -80,11 +80,37 @@ function flipCard(){
     if(!hasFlipped){
         hasFlipped = true;
         firstCard = this;
+        console.log('first card flipped');
     }
     else{
         hasFlipped = false;
         secondCard = this;
+        console.log('second card flipped',secondCard.dataset.name)
+
+        if(firstCard.dataset.name === secondCard.dataset.name){
+            console.log('its a match !!!!');
+            firstCard.removeEventListener('click',flipCard);
+        }
+        else{
+            setTimeout(() => {
+                firstCard.classList.remove('flip');
+                secondCard.classList.remove('flip');
+            },700)
+        }
     }
+    /*else{
+        hasFlipped = false;
+        secondCard = this;
+
+        if(firstCard.dataset.name === secondCard.dataset.name){
+            firstCard.removeEventListner('click',flipCard);
+            secondCard.removeEventListner('click',flipCard);
+        }
+        else{
+            firstCard.classList.remove('flip');
+            secondCard.classList.remove('flip');
+        }
+    }*/
 }
 
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
