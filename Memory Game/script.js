@@ -56,7 +56,8 @@ function myFunction() {
         const max = 9;
         let card = document.createElement('div');
         card.className = 'card-wrapper';
-        card.innerHTML = `<div class="card-front"><img src="${cardArray[index].img}"></div><div class="card-back">random</div>`;
+        card.setAttribute('data-name',cardArray[index].name);
+        card.innerHTML = `<div class="card-front"><img src="${cardArray[index].img}"></div><div class="card-back"></div>`;
         //card.innerHTML = `<img src="${cardArray[index].img}">`;
         document.getElementById('grid').appendChild(card);
 
@@ -67,12 +68,23 @@ function myFunction() {
 myFunction();
 
 
+let hasFlipped = false;
+let firstCard, secondCard;
+
 
 const cardsList = document.querySelectorAll('.card-wrapper');
 
 function flipCard(){
-    console.log('clicked !!!!!!');
-    this.classList.toggle('flip');
+    this.classList.add('flip');
+
+    if(!hasFlipped){
+        hasFlipped = true;
+        firstCard = this;
+    }
+    else{
+        hasFlipped = false;
+        secondCard = this;
+    }
 }
 
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));

@@ -56,7 +56,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    perspective: 1000px;
+    perspective: 1500px;
 }
 
 .card-wrapper{
@@ -88,7 +88,7 @@
 
 .card-back{
   position: absolute;
-  background-color: lightpink;
+  background-color: #f8f8f8;
 }
 
 .card:hover{
