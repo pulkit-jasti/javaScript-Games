@@ -12,7 +12,7 @@
 }
 
 .container img{
-    height: 100px;
+    height: 10vmin;
 }
 
 .container .background-lines{
@@ -35,7 +35,8 @@
 .line-7{background-color: lightpink;}
 
 
-.card-container{
+#card-container{
+    overflow: hidden;
     position: absolute;
     height: 90%;
     width: 60%;
@@ -45,4 +46,13 @@
     background-color: #f8f8f8;
     border-radius: 50px;
     box-shadow: 0px 0px 70px 10px rgba(0, 0, 0,.1);
+}
+
+
+#card-container #grid{
+    height: 500px;
+    width: 500px;
+    background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
 }
