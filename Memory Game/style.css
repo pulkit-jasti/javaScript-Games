@@ -135,7 +135,7 @@
           transform: rotateY(180deg);
 }
 
-#game-over {
+#you-win, #you-loose {
   position: absolute;
   height: 100vh;
   width: 100%;
@@ -152,7 +152,7 @@
   font-family: sans-serif;
 }
 
-#game-over .try-again {
+#you-win .try-again, #you-loose .try-again {
   height: 70px;
   width: 200px;
   color: white;
@@ -164,12 +164,12 @@
   border-radius: 5px;
 }
 
-#game-over .try-again:hover {
+#you-win .try-again:hover, #you-loose .try-again:hover {
   cursor: pointer;
   background-color: #eb6666;
 }
 
-#game-over #game-lost {
+#you-win #game-lost, #you-loose #game-lost {
   height: 550px;
   width: 600px;
   border-radius: 10px;
@@ -189,7 +189,7 @@
           flex-direction: column;
 }
 
-#game-over #game-lost #title {
+#you-win #game-lost #title, #you-loose #game-lost #title {
   color: white;
   font-size: 40px;
   font-weight: 700;

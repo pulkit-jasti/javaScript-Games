@@ -60,8 +60,7 @@ let cardSpawner = () => {
 cardSpawner();
 
 
-let gameOverScreen = document.getElementById('game-over');
-gameOverScreen.style.display = 'none'
+
 
 
 let hasFlipped = false;
@@ -126,12 +125,22 @@ let resetBaord = () => {
     secondCard = null;
 }
 
+
+let youWinScreen = document.getElementById('you-win');
+youWinScreen.style.display = 'none';
+
 let youWin = () => {
     console.log('you win');
+    youWinScreen.style.display = 'flex'
 }
+
+
+let youLooseScreen = document.getElementById('you-loose');
+youLooseScreen.style.display = 'none';
 
 let youLoose = () => {
     console.log('you loose');
+    youLooseScreen.style.display = 'flex';
 }
 
 
@@ -142,25 +151,29 @@ let youLoose = () => {
     });
 })();
 
+
+let timer = () => {
+    let timeLimit = 5;
+
+    let mil = 0;
+    let sec = 0;
+    let timeRemaining = 0;
+    
+    let interval = setInterval(() => {
+        mil+=10;
+        if(mil==1000){
+            mil=0;
+            sec++;
+        }
+        timeRemaining = timeLimit-sec;
+        if(timeRemaining==0){
+            clearInterval(interval);
+            youLoose();
+        }
+        document.getElementById('time').innerHTML = `Time:<br>${timeRemaining}:${mil/10}`
+    },10);
+}
+
+timer();
+
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
-
-
-let timeLimit = 10;
-
-let mil = 0;
-let sec = 0;
-let timeRemaining = 0;
-
-let interval = setInterval(() => {
-    mil+=10;
-    if(mil==1000){
-        mil=0;
-        sec++;
-    }
-    timeRemaining = timeLimit-sec;
-    if(timeRemaining==0){
-        clearInterval(interval);
-        youLoose();
-    }
-    document.getElementById('time').innerHTML = `Time:<br>${timeRemaining}:${mil}`
-},10)
