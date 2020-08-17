@@ -63,10 +63,14 @@ cardSpawner();
 
 
 let hasFlipped = false;
+let lockBoard = false;
 let firstCard, secondCard;
 const cardsList = document.querySelectorAll('.card-wrapper');
 
 function flipCard(){
+    if(lockBoard) return;
+    if(this === firstCard) return;
+
     this.classList.add('flip');
 
     if(!hasFlipped){
@@ -92,10 +96,20 @@ let disableCards = () => {
 }
 
 let unflipCards = () => {
+    lockBoard = true;
     setTimeout(() => {
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-    },700)
+        
+        resetBaord();
+    },1200)
+}
+
+let resetBaord = () => {
+    hasFlipped = false;
+    lockBoard = false;
+    firstCard = null;
+    secondCard = null;
 }
 
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
