@@ -76,12 +76,11 @@ function flipCard(){
     if(!hasFlipped){
         hasFlipped = true;
         firstCard = this;
-        console.log('first card flipped');
     }
     else{
         hasFlipped = false;
         secondCard = this;
-        console.log('second card flipped',secondCard.dataset.name)
+
         checkForMatch();
     }
 }
@@ -111,5 +110,13 @@ let resetBaord = () => {
     firstCard = null;
     secondCard = null;
 }
+
+
+(function shuffle (){
+    cardsList.forEach(cardsList => {
+        let randomPos = Math.floor(Math.random()*20);
+        cardsList.style.order = randomPos;
+    });
+})();
 
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
