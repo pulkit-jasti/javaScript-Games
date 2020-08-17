@@ -83,6 +83,20 @@ function flipCard(){
 
         checkForMatch();
     }
+
+    let count = 0;
+    for(let i=0;i<cardsList.length;i++){
+        if(cardsList[i].classList.contains('flip')){
+            count++;
+        }
+    }
+
+    if(count==cardsList.length){
+        setTimeout(() => {
+            location.reload();
+        },1500);
+        //console.log('function executed');
+    }
 }
 
 let checkForMatch = () => {
