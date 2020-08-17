@@ -60,12 +60,12 @@
 }
 
 .card-wrapper{
-  height: 90px;
-  width:90px;
-  margin: 0 10px;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform .5s;
+    height: 90px;
+    width:90px;
+    margin: 0 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform .5s;
 }
 
 .card,.card-front,.card-back{
@@ -82,13 +82,13 @@
 }
 
 .card-front{
-  position: absolute;
-  transform: rotateY(180deg);
+    position: absolute;
+    transform: rotateY(180deg);
 }
 
 .card-back{
-  position: absolute;
-  background-color: #f8f8f8;
+    position: absolute;
+    background-color: #f8f8f8;
 }
 
 .card:hover{
@@ -99,5 +99,5 @@
 }
 
 .card-wrapper.flip{
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }

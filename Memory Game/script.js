@@ -42,14 +42,7 @@ const cardArray = [
 ];
 
 
-
-var obj = document.getElementById('card-container')
-console.log(obj);
-obj.style.backgroundColor='yellow'
-
-var obj2 = document.getElementsByClassName('grid')
-console.log(obj2);
-function myFunction() {
+let cardSpawner = () => {
     let index = 0;
     const numberOfCards = 20;
     for(let i=0;i<numberOfCards;i++){
@@ -58,20 +51,19 @@ function myFunction() {
         card.className = 'card-wrapper';
         card.setAttribute('data-name',cardArray[index].name);
         card.innerHTML = `<div class="card-front"><img src="${cardArray[index].img}"></div><div class="card-back"></div>`;
-        //card.innerHTML = `<img src="${cardArray[index].img}">`;
         document.getElementById('grid').appendChild(card);
-
         index++;
         if(index>9){index=0};
     }
 }
-myFunction();
+
+cardSpawner();
+
+
 
 
 let hasFlipped = false;
 let firstCard, secondCard;
-
-
 const cardsList = document.querySelectorAll('.card-wrapper');
 
 function flipCard(){
@@ -86,57 +78,24 @@ function flipCard(){
         hasFlipped = false;
         secondCard = this;
         console.log('second card flipped',secondCard.dataset.name)
-
-        if(firstCard.dataset.name === secondCard.dataset.name){
-            console.log('its a match !!!!');
-            firstCard.removeEventListener('click',flipCard);
-        }
-        else{
-            setTimeout(() => {
-                firstCard.classList.remove('flip');
-                secondCard.classList.remove('flip');
-            },700)
-        }
+        checkForMatch();
     }
-    /*else{
-        hasFlipped = false;
-        secondCard = this;
+}
 
-        if(firstCard.dataset.name === secondCard.dataset.name){
-            firstCard.removeEventListner('click',flipCard);
-            secondCard.removeEventListner('click',flipCard);
-        }
-        else{
-            firstCard.classList.remove('flip');
-            secondCard.classList.remove('flip');
-        }
-    }*/
+let checkForMatch = () => {
+    firstCard.dataset.name === secondCard.dataset.name ? disableCards() : unflipCards();
+}
+
+let disableCards = () => {
+    firstCard.removeEventListener('click',flipCard);
+    secondCard.removeEventListener('click',flipCard);
+}
+
+let unflipCards = () => {
+    setTimeout(() => {
+        firstCard.classList.remove('flip');
+        secondCard.classList.remove('flip');
+    },700)
 }
 
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*document.addEventListener('DOMContentLoaded',() => {
-
-})
-*/
