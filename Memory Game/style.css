@@ -135,14 +135,12 @@
           transform: rotateY(180deg);
 }
 
-#you-win, #you-loose {
+#you-win, #you-loose, #welcome-screen {
   position: absolute;
   height: 100vh;
   width: 100%;
   background-color: rgba(94, 94, 94, 0.288);
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -152,7 +150,7 @@
   font-family: sans-serif;
 }
 
-#you-win .try-again, #you-loose .try-again {
+#you-win button, #you-loose button, #welcome-screen button {
   height: 70px;
   width: 200px;
   color: white;
@@ -164,12 +162,12 @@
   border-radius: 5px;
 }
 
-#you-win .try-again:hover, #you-loose .try-again:hover {
+#you-win button:hover, #you-loose button:hover, #welcome-screen button:hover {
   cursor: pointer;
   background-color: #eb6666;
 }
 
-#you-win #game-lost, #you-loose #game-lost {
+#you-win #you-win-wrapper, #you-win #you-loose-wrapper, #you-win #welcome-wrapper, #you-loose #you-win-wrapper, #you-loose #you-loose-wrapper, #you-loose #welcome-wrapper, #welcome-screen #you-win-wrapper, #welcome-screen #you-loose-wrapper, #welcome-screen #welcome-wrapper {
   height: 550px;
   width: 600px;
   border-radius: 10px;
@@ -189,11 +187,17 @@
           flex-direction: column;
 }
 
-#you-win #game-lost #title, #you-loose #game-lost #title {
+#you-win #you-win-wrapper #title, #you-win #you-loose-wrapper #title, #you-win #welcome-wrapper #title, #you-loose #you-win-wrapper #title, #you-loose #you-loose-wrapper #title, #you-loose #welcome-wrapper #title, #welcome-screen #you-win-wrapper #title, #welcome-screen #you-loose-wrapper #title, #welcome-screen #welcome-wrapper #title {
   color: white;
   font-size: 40px;
   font-weight: 700;
   text-align: center;
+}
+
+#welcome-screen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 #timer {

@@ -63,6 +63,36 @@ cardSpawner();
 
 
 
+//
+
+let timerWin = false;
+let timer = () => {
+    let timeLimit = 600;
+
+    let mil = 0;
+    let sec = 0;
+    let timeRemaining = 0;
+    
+    let interval = setInterval(() => {
+        mil+=10;
+        if(mil==1000){
+            mil=0;
+            sec++;
+        }
+        timeRemaining = timeLimit-sec;
+        if(timeRemaining==0||timerWin==true){
+            clearInterval(interval);
+            youLoose();
+        }
+        document.getElementById('time').innerHTML = `Time:<br>${timeRemaining}:${mil/10}`
+    },10);
+}
+
+
+
+
+
+
 let hasFlipped = false;
 let lockBoard = false;
 let firstCard, secondCard;
@@ -95,7 +125,7 @@ function flipCard(){
     if(count==cardsList.length){
         setTimeout(() => {
             youWin();
-        },1500);
+        },500);
     }
 }
 
@@ -115,7 +145,7 @@ let unflipCards = () => {
         secondCard.classList.remove('flip');
         
         resetBaord();
-    },1200)
+    },700)
 }
 
 let resetBaord = () => {
@@ -126,21 +156,15 @@ let resetBaord = () => {
 }
 
 
-let youWinScreen = document.getElementById('you-win');
-youWinScreen.style.display = 'none';
-
 let youWin = () => {
     console.log('you win');
-    youWinScreen.style.display = 'flex'
+    document.getElementById('you-win').style.display = 'flex'
+    timerWin = true;
 }
-
-
-let youLooseScreen = document.getElementById('you-loose');
-youLooseScreen.style.display = 'none';
 
 let youLoose = () => {
     console.log('you loose');
-    youLooseScreen.style.display = 'flex';
+    document.getElementById('you-loose').style.display = 'flex'
 }
 
 
@@ -152,28 +176,9 @@ let youLoose = () => {
 })();
 
 
-let timer = () => {
-    let timeLimit = 5;
-
-    let mil = 0;
-    let sec = 0;
-    let timeRemaining = 0;
-    
-    let interval = setInterval(() => {
-        mil+=10;
-        if(mil==1000){
-            mil=0;
-            sec++;
-        }
-        timeRemaining = timeLimit-sec;
-        if(timeRemaining==0){
-            clearInterval(interval);
-            youLoose();
-        }
-        document.getElementById('time').innerHTML = `Time:<br>${timeRemaining}:${mil/10}`
-    },10);
-}
-
-timer();
-
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
+
+function play(){
+    document.getElementById('welcome-screen').style.display = 'none';
+    timer();
+}
