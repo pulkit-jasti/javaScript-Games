@@ -5,18 +5,18 @@
   padding: 0;
 }
 
-.container {
+.game-container {
   position: relative;
   height: 100vh;
   width: 100%;
   background-color: lightcoral;
 }
 
-.container img {
+.game-container img {
   height: 10vmin;
 }
 
-.container .background-lines {
+.game-container .background-lines {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -55,19 +55,6 @@
   background-color: lightpink;
 }
 
-/*
-#card-container{
-    overflow: hidden;
-    position: absolute;
-    height: 90%;
-    width: 700px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #f8f8f8;
-    border-radius: 50px;
-    box-shadow: 0px 0px 70px 10px rgba(0, 0, 0,.1);
-}*/
 #grid {
   overflow: hidden;
   position: absolute;
@@ -96,7 +83,7 @@
           perspective: 1500px;
 }
 
-.card-wrapper {
+#grid .card-wrapper {
   height: 90px;
   width: 90px;
   margin: 0 10px;
@@ -109,7 +96,7 @@
   transition: transform .5s, -webkit-transform .5s;
 }
 
-.card, .card-front, .card-back {
+#grid .card-wrapper .card, #grid .card-wrapper .card-front, #grid .card-wrapper .card-back {
   height: 100%;
   width: 100%;
   background-color: #f8f8f8;
@@ -131,25 +118,15 @@
           backface-visibility: hidden;
 }
 
-.card-front {
+#grid .card-wrapper .card-front {
   position: absolute;
   -webkit-transform: rotateY(180deg);
           transform: rotateY(180deg);
 }
 
-.card-back {
+#grid .card-wrapper .card-back {
   position: absolute;
   background-color: #f8f8f8;
-}
-
-.card:hover {
-  cursor: pointer;
-  -webkit-transform: scale(1.2, 1.2);
-          transform: scale(1.2, 1.2);
-  -webkit-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
 }
 
 .card-wrapper.flip {

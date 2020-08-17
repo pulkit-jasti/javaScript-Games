@@ -4,22 +4,23 @@
     padding: 0;
 }
 
-.container{
+.game-container{
     position: relative;
     height: 100vh;
     width: 100%;
     background-color: lightcoral;
+
+    img{
+        height: 10vmin;
+    }
+
+    .background-lines{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+    }
 }
 
-.container img{
-    height: 10vmin;
-}
-
-.container .background-lines{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
 
 .line-1,.line-2,.line-3,.line-4,.line-5,.line-6,.line-7{
     height: 16.66%;
@@ -34,19 +35,7 @@
 .line-6{background-color: lightseagreen;}
 .line-7{background-color: lightpink;}
 
-/*
-#card-container{
-    overflow: hidden;
-    position: absolute;
-    height: 90%;
-    width: 700px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    background-color: #f8f8f8;
-    border-radius: 50px;
-    box-shadow: 0px 0px 70px 10px rgba(0, 0, 0,.1);
-}*/
+
 
 #grid{
     overflow: hidden;
@@ -65,45 +54,40 @@
     justify-content: center;
     align-items: center;
     perspective: 1500px;
-}
 
-.card-wrapper{
-    height: 90px;
-    width:90px;
-    margin: 0 10px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform .5s;
-}
 
-.card,.card-front,.card-back{
-    height: 100%;
-    width:100%;
-    background-color: #f8f8f8;
-    border-radius: 10px;
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: scale(1);
-    backface-visibility: hidden;
-}
+    .card-wrapper{
+        height: 90px;
+        width:90px;
+        margin: 0 10px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .5s;
 
-.card-front{
-    position: absolute;
-    transform: rotateY(180deg);
-}
-
-.card-back{
-    position: absolute;
-    background-color: #f8f8f8;
-}
-
-.card:hover{
-    cursor: pointer;
-    transform: scale(1.2,1.2);
-    transition-property: all;
-    transition-duration: 200ms;
+        .card,.card-front,.card-back{
+            height: 100%;
+            width:100%;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: scale(1);
+            backface-visibility: hidden;
+        }
+        
+        .card-front{
+            position: absolute;
+            transform: rotateY(180deg);
+        }
+        
+        .card-back{
+            position: absolute;
+            background-color: #f8f8f8;
+        }
+        
+    }
 }
 
 .card-wrapper.flip{
