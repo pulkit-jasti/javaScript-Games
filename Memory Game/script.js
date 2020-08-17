@@ -95,10 +95,8 @@ function flipCard(){
 
     if(count==cardsList.length){
         setTimeout(() => {
-            gameOverScreen.style.display = 'flex'
-            //location.reload();
+            youWin();
         },1500);
-        //console.log('function executed');
     }
 }
 
@@ -128,6 +126,14 @@ let resetBaord = () => {
     secondCard = null;
 }
 
+let youWin = () => {
+    console.log('you win');
+}
+
+let youLoose = () => {
+    console.log('you loose');
+}
+
 
 (function shuffle (){
     cardsList.forEach(cardsList => {
@@ -137,3 +143,24 @@ let resetBaord = () => {
 })();
 
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
+
+
+let timeLimit = 10;
+
+let mil = 0;
+let sec = 0;
+let timeRemaining = 0;
+
+let interval = setInterval(() => {
+    mil+=10;
+    if(mil==1000){
+        mil=0;
+        sec++;
+    }
+    timeRemaining = timeLimit-sec;
+    if(timeRemaining==0){
+        clearInterval(interval);
+        youLoose();
+    }
+    document.getElementById('time').innerHTML = `Time:<br>${timeRemaining}:${mil}`
+},10)
