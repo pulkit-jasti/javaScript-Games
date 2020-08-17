@@ -5,7 +5,7 @@
 }
 
 .game-container{
-    position: relative;
+    position: absolute;
     height: 100vh;
     width: 100%;
     background-color: lightcoral;
@@ -92,4 +92,51 @@
 
 .card-wrapper.flip{
     transform: rotateY(180deg);
+}
+
+
+#game-over{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(94, 94, 94, 0.288);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+
+    .try-again{
+        height: 70px;
+        width: 200px;
+        color: white;
+        font-size: 25px;
+        font-weight: 600;
+        background-color: lightcoral;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+
+        &:hover{
+            cursor: pointer;
+            background-color: rgb(235, 102, 102);
+        }
+    }
+
+    #game-lost{
+        height: 550px;
+        width: 600px;
+        border-radius: 10px;
+        background-color: lightpink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        #title{
+            color: white;
+            font-size: 40px;
+            font-weight: 700;
+            text-align: center;
+        }
+    }
 }

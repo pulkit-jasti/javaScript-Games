@@ -60,6 +60,8 @@ let cardSpawner = () => {
 cardSpawner();
 
 
+let gameOverScreen = document.getElementById('game-over');
+gameOverScreen.style.display = 'none'
 
 
 let hasFlipped = false;
@@ -93,7 +95,8 @@ function flipCard(){
 
     if(count==cardsList.length){
         setTimeout(() => {
-            location.reload();
+            gameOverScreen.style.display = 'flex'
+            //location.reload();
         },1500);
         //console.log('function executed');
     }
