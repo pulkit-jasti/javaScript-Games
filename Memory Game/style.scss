@@ -111,14 +111,13 @@ $card-back-background: #f8f8f8;
 
         &:hover{
             cursor: pointer;
-            //transform: scale(2);
             .card-back{
                 background-color: #e7e7e7;
             }
         }
 
         &:active{
-            transform: scale(1.7);
+            transform: scale(1.5);
             transition-property: all;
             transition-duration: 200ms;
         }
@@ -163,13 +162,18 @@ $card-back-background: #f8f8f8;
         align-items: center;
         flex-direction: column;
 
-        #title{
+        #title,#timeee{
             color: #343436;
             font-size: 30px;
             font-weight: 700;
             letter-spacing: 2px;
             text-align: center;
             margin-bottom: 40px;
+        }
+
+        #timeee{
+            margin-top: 40px;
+            font-size: 20px;
         }
     }
 }

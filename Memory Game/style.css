@@ -142,8 +142,8 @@
 }
 
 #grid .card-wrapper:active {
-  -webkit-transform: scale(1.7);
-          transform: scale(1.7);
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
   -webkit-transition-property: all;
   transition-property: all;
   -webkit-transition-duration: 200ms;
@@ -203,13 +203,18 @@
           flex-direction: column;
 }
 
-#you-win #you-win-wrapper #title, #you-win #you-loose-wrapper #title, #you-win #welcome-wrapper #title, #you-loose #you-win-wrapper #title, #you-loose #you-loose-wrapper #title, #you-loose #welcome-wrapper #title, #welcome-screen #you-win-wrapper #title, #welcome-screen #you-loose-wrapper #title, #welcome-screen #welcome-wrapper #title {
+#you-win #you-win-wrapper #title, #you-win #you-win-wrapper #timeee, #you-win #you-loose-wrapper #title, #you-win #you-loose-wrapper #timeee, #you-win #welcome-wrapper #title, #you-win #welcome-wrapper #timeee, #you-loose #you-win-wrapper #title, #you-loose #you-win-wrapper #timeee, #you-loose #you-loose-wrapper #title, #you-loose #you-loose-wrapper #timeee, #you-loose #welcome-wrapper #title, #you-loose #welcome-wrapper #timeee, #welcome-screen #you-win-wrapper #title, #welcome-screen #you-win-wrapper #timeee, #welcome-screen #you-loose-wrapper #title, #welcome-screen #you-loose-wrapper #timeee, #welcome-screen #welcome-wrapper #title, #welcome-screen #welcome-wrapper #timeee {
   color: #343436;
   font-size: 30px;
   font-weight: 700;
   letter-spacing: 2px;
   text-align: center;
   margin-bottom: 40px;
+}
+
+#you-win #you-win-wrapper #timeee, #you-win #you-loose-wrapper #timeee, #you-win #welcome-wrapper #timeee, #you-loose #you-win-wrapper #timeee, #you-loose #you-loose-wrapper #timeee, #you-loose #welcome-wrapper #timeee, #welcome-screen #you-win-wrapper #timeee, #welcome-screen #you-loose-wrapper #timeee, #welcome-screen #welcome-wrapper #timeee {
+  margin-top: 40px;
+  font-size: 20px;
 }
 
 #welcome-screen {
