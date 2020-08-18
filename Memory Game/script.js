@@ -63,12 +63,12 @@ cardSpawner();
 
 
 
-//
+//Timer function
 
 let timerWin = false;
-let timer = () => {
-    let timeLimit = 600;
+let timeLimit = 59; //time limit in seconds
 
+let timer = () => {
     let mil = 0;
     let sec = 0;
     let timeRemaining = 0;
@@ -91,7 +91,7 @@ let timer = () => {
 
 
 
-
+//Main gameplay logic
 
 let hasFlipped = false;
 let lockBoard = false;
@@ -168,6 +168,7 @@ let youLoose = () => {
 }
 
 
+//Function to shuffle the cards each time the webpage is reloaded
 (function shuffle (){
     cardsList.forEach(cardsList => {
         let randomPos = Math.floor(Math.random()*20);
@@ -178,6 +179,8 @@ let youLoose = () => {
 
 cardsList.forEach(cardsList => cardsList.addEventListener('click',flipCard));
 
+
+//Function to start the game
 function play(){
     document.getElementById('welcome-screen').style.display = 'none';
     timer();
