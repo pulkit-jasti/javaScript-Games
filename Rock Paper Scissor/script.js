@@ -13,9 +13,7 @@ let hands = [
 	},
 ];
 
-let rock = document.getElementById('rock');
-let paper = document.getElementById('paper');
-let scissor = document.getElementById('scissor');
+let buttons = document.querySelectorAll('.player-option');
 
 let player = document.getElementById('player-hand');
 let computer = document.getElementById('computer-hand');
@@ -26,10 +24,14 @@ let displayComputerScore = document.getElementById('computer-score');
 let playerScore = 0;
 let computerScore = 0;
 
-enableClicks();
+buttons.forEach(e => {
+	e.addEventListener('click', playGame);
+});
 
 function playGame() {
-	disableClicks();
+	buttons.forEach(e => {
+		e.removeEventListener('click', playGame);
+	});
 
 	player.style.animation = 'shakePlayer 2s ease';
 	computer.style.animation = 'shakeComputer 2s ease';
@@ -70,19 +72,9 @@ function playGame() {
 		setTimeout(() => {
 			player.src = hands[0].address;
 			computer.src = hands[0].address;
-			enableClicks();
+			buttons.forEach(e => {
+				e.addEventListener('click', playGame);
+			});
 		}, 4000);
 	}, 2000);
-}
-
-function disableClicks() {
-	rock.removeEventListener('click', playGame);
-	paper.removeEventListener('click', playGame);
-	scissor.removeEventListener('click', playGame);
-}
-
-function enableClicks() {
-	rock.addEventListener('click', playGame);
-	paper.addEventListener('click', playGame);
-	scissor.addEventListener('click', playGame);
 }

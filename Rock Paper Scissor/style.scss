@@ -32,6 +32,17 @@ $silver: #f8f8f8;
 	transform: translateY(-50%);
 }
 
+::-moz-selection {
+	/* Code for Firefox */
+	color: #fff;
+	background: #000;
+}
+
+::selection {
+	color: #fff;
+	background: #000;
+}
+
 //MAIN CSS
 main {
 	overflow: hidden;
