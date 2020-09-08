@@ -34,7 +34,7 @@ $silver: #f8f8f8;
 
 //MAIN CSS
 main {
-	overflow-x: hidden;
+	overflow: hidden;
 	height: 100vh;
 	width: 100%;
 	//background-color: lightcoral;
@@ -137,8 +137,20 @@ main {
 
 @media screen and (max-width: 992px) {
 	main {
+		.title {
+			text-align: center;
+			font-size: 3rem;
+		}
+
 		.main-container {
 			width: 100%;
+
+			.score-container {
+				div {
+					width: 150px;
+					font-size: 1.3rem;
+				}
+			}
 		}
 	}
 }
