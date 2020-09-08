@@ -15,6 +15,8 @@ $silver: #f8f8f8;
 
 	background-size: cover;
 	background-repeat: no-repeat;
+
+	font-family: sans-serif;
 }
 
 //MIXIN
@@ -35,28 +37,60 @@ main {
 	//overflow-x: hidden;
 	height: 100vh;
 	width: 100%;
-	background-color: lightcoral;
+	//background-color: lightcoral;
 
 	@include flexcenter();
 
 	.main-container {
+		width: 400px;
 		display: flex;
 		flex-direction: column;
 
+		gap: 40px;
+
 		.score-container {
-			padding: 0 400px;
 			background-color: lightblue;
 
-			@include flexcenter();
+			display: flex;
 			justify-content: space-between;
 		}
 
 		.hand-container {
 			display: flex;
+			justify-content: space-between;
+
+			img {
+				height: 100px;
+			}
+
+			#player-hand {
+				transform: scaleX(-1);
+			}
 		}
 
-		.player-options {
-			display: flex;
+		.player-choice-container {
+			h2 {
+				text-align: center;
+			}
+
+			.btn-wrapper {
+				margin: 20px;
+				display: flex;
+				justify-content: space-between;
+
+				button {
+					padding: 10px 20px;
+					background-color: #000;
+					color: #fff;
+
+					outline: none;
+					border: none;
+
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
 		}
 	}
 }
