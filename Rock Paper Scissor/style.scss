@@ -34,7 +34,7 @@ $silver: #f8f8f8;
 
 //MAIN CSS
 main {
-	//overflow-x: hidden;
+	overflow-x: hidden;
 	height: 100vh;
 	width: 100%;
 	//background-color: lightcoral;
@@ -49,18 +49,26 @@ main {
 		gap: 40px;
 
 		.score-container {
-			background-color: lightblue;
+			width: 100%;
+			padding: 0 20px;
 
 			display: flex;
 			justify-content: space-between;
+
+			div {
+				font-size: 1.2rem;
+				font-weight: 700;
+			}
 		}
 
 		.hand-container {
+			width: 100%;
 			display: flex;
 			justify-content: space-between;
+			//background-color: lightblue;
 
 			img {
-				height: 100px;
+				height: 150px;
 			}
 
 			#player-hand {
@@ -69,25 +77,39 @@ main {
 		}
 
 		.player-choice-container {
+			width: 100%;
+
 			h2 {
 				text-align: center;
 			}
 
 			.btn-wrapper {
-				margin: 20px;
+				margin-top: 30px;
 				display: flex;
-				justify-content: space-between;
+				justify-content: space-evenly;
 
 				button {
-					padding: 10px 20px;
+					height: 45px;
+					width: 100px;
 					background-color: #000;
+
+					font-size: 1.1rem;
 					color: #fff;
 
 					outline: none;
 					border: none;
+					border-radius: 10px;
+
+					box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.1);
+					transition-duration: 300ms;
 
 					&:hover {
 						cursor: pointer;
+					}
+
+					&:active {
+						transform: scale(0.9, 0.9);
+						box-shadow: none;
 					}
 				}
 			}
@@ -95,8 +117,10 @@ main {
 	}
 }
 
-.sample-page {
-	height: 100vh;
-	width: 100%;
-	background-color: lightblue;
+@media screen and (max-width: 992px) {
+	main {
+		.main-container {
+			width: 100%;
+		}
+	}
 }
