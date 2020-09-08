@@ -16,7 +16,7 @@ $silver: #f8f8f8;
 	background-size: cover;
 	background-repeat: no-repeat;
 
-	font-family: sans-serif;
+	font-family: monospace;
 }
 
 //MIXIN
@@ -40,6 +40,13 @@ main {
 	//background-color: lightcoral;
 
 	@include flexcenter();
+	flex-direction: column;
+	gap: 60px;
+
+	.title {
+		font-size: 4rem;
+		font-weight: 700;
+	}
 
 	.main-container {
 		width: 400px;
@@ -56,8 +63,18 @@ main {
 			justify-content: space-between;
 
 			div {
-				font-size: 1.2rem;
+				height: 40px;
+				width: 160px;
+				background-color: #000;
+				border-radius: 10px;
+
+				font-size: 1.8rem;
 				font-weight: 700;
+				color: #fff;
+				text-align: center;
+				line-height: 40px;
+
+				box-shadow: 15px 15px 10px rgba(0, 0, 0, 0.1);
 			}
 		}
 
@@ -81,6 +98,7 @@ main {
 
 			h2 {
 				text-align: center;
+				text-decoration: underline;
 			}
 
 			.btn-wrapper {
@@ -93,7 +111,7 @@ main {
 					width: 100px;
 					background-color: #000;
 
-					font-size: 1.1rem;
+					font-size: 1.3rem;
 					color: #fff;
 
 					outline: none;
